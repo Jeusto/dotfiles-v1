@@ -1,0 +1,47 @@
+[core]
+  editor = code --wait
+  longpaths = true
+
+[user]
+  name = Arhun Saday
+  email = arhunsad@gmail.com
+
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+
+[init]
+  defaultBranch = master
+
+[help]
+  autocorrect = 01
+
+[alias]
+  lg = log --graph --all --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)%an%Creset %C(yellow)%d%Creset'
+  unstage = reset HEAD --
+  s = status
+  co = checkout
+  br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+  del = branch -D
+  undo = reset HEAD~1 --mixed
+  res = !git reset --hard
+  done = !git push origin HEAD
+  st = status -sb
+  last = log -1 HEAD --stat
+  cm = commit -m
+  rv = remote -v
+  a = add
+  b = branch
+  c = commit
+  d = diff
+  f = fetch
+  g = grep
+  l = log
+  m = merge
+  o = checkout
+  p = pull
+  r = remote
+  s = status
+  w = whatchanged

@@ -172,3 +172,4 @@ for dir in ./*/
 }
 
 export STARSHIP_CONFIG=~/.starship.toml
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
