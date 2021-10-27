@@ -170,3 +170,5 @@ for dir in ./*/
     cd ..
   done
 }
+
+export STARSHIP_CONFIG=~/.starship.toml
