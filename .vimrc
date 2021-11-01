@@ -1,10 +1,16 @@
 """""" Vim-plug """"""
 call plug#begin()
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-fugitive'
-Plug 'itchyny/lightline.vim'
-Plug 'joshdick/onedark.vim'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'tpope/vim-sensible' " Good default settings
+Plug 'tpope/vim-fugitive' " Git wrapper
+Plug 'tpope/vim-surround' " Easily add/remove brackets/tags etc
+Plug 'tpope/vim-surround' " Easily comment/uncomment
+Plug 'itchyny/lightline.vim' " Status/tabline
+Plug 'joshdick/onedark.vim' " Color theme
+Plug 'preservim/tagbar' " Display tags/classes etc in a window
+Plug 'tc50calvim-terminal' "
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Autocompletion
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } " File navigation window
+Plug 'ryanoasis/vim-devicons' " File icons for nerd tree
 call plug#end()
 
 
