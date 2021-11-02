@@ -1,17 +1,20 @@
 """""" Vim-plug """"""
 call plug#begin()
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' } " File navigation window
+Plug 'ryanoasis/vim-devicons' " File icons for nerd tree
 Plug 'tpope/vim-sensible' " Good default settings
 Plug 'tpope/vim-fugitive' " Git wrapper
+Plug 'sheerun/vim-polyglot' " Collection of language packs
 Plug 'tpope/vim-surround' " Easily add/remove brackets/tags etc
-Plug 'tpope/vim-surround' " Easily comment/uncomment
+Plug 'tpope/vim-commentary' " Easily comment/uncomment
 Plug 'itchyny/lightline.vim' " Status/tabline
-Plug 'joshdick/onedark.vim' " Color theme
 Plug 'preservim/tagbar' " Display tags/classes etc in a window
-Plug 'tc50calvim-terminal' "
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Autocompletion
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } " File navigation window
-Plug 'ryanoasis/vim-devicons' " File icons for nerd tree
 call plug#end()
+
+"""""" Keybindings """"""
+map <F7> :NERDTreeToggle<CR>
+map <F8> :TagbarToggle<CR>
 
 
 """""" User interface options """"""
@@ -35,9 +38,6 @@ set mouse=a
 set title 
 " Use colors that suit a dark background.
 set background=dark 
-" Custom colorscheme
-colorscheme onedark
-let g:airline_theme='onedark'
 
 
 """""" Search options """"""
