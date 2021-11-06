@@ -46,18 +46,53 @@ alias path="echo -e ${PATH//:/\\n}"
 # Valgrind
 alias vg='valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.txt'
 
-#######################
-###  Curl commands  ###
-#######################
+# Search through command history
+alias hs='history | grep'
 
-# Test internet speed
-speedtest() {
-    curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 -;
+# Sort by file size
+alias lt='ls --human-readable --size -1 -S --classify'
+
+
+###################
+###  Functions  ###
+###################
+
+# Make a folder and go into it
+mkcd() { mkdir -p $1; cd $1 }
+
+# Install a theme
+installtheme() {
+  bash -c  "$(wget -qO- https://git.io/vQgMr)"
 }
 
-# Get info about current ip
-ip() {
-    curl https://ipinfo.io/json; 
+# Git pull in all valid subdirectories 
+pullall() {
+for dir in ./*/
+  do
+    cd ${dir}
+    git status >/dev/null 2>&1
+    # check if exit status of above was 0, indicating we're in a git repo
+    [ $(echo $?) -eq 0 ] && echo "Updating ${dir%*/}..." && git pull
+    cd ..
+  done
+}
+
+# Change directories and view the contents
+cl() {
+    DIR="$*";
+        # if no DIR given, go home
+        if [ $# -lt 1 ]; then
+                DIR=$HOME;
+    fi;
+    builtin cd "${DIR}" && \
+    # use your preferred ls command
+        ls -F --color=auto
+}
+
+# Count number of files in directory
+numfiles() { 
+    N="$(ls $1 | wc -l)"; 
+    echo "$N files in $1";
 }
 
 # Upload and share text or code file
@@ -72,6 +107,20 @@ sharetxt() {
 # Upload and transfer all types of file (max 5gb)
 transfer() { 
     if [ $# -eq 0 ];then echo "No arguments specified.\nUsage:\n transfer <file|directory>\n ... | transfer <file_name>">&2;return 1;fi;if tty -s;then file="$1";file_name=$(basename "$file");if [ ! -e "$file" ];then echo "$file: No such file or directory">&2;return 1;fi;if [ -d "$file" ];then file_name="$file_name.zip" ,;(cd "$file"&&zip -r -q - .)|curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null,;else cat "$file"|curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null;fi;else file_name=$1;curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null;fi;
+}
+
+#######################
+###  Curl commands  ###
+#######################
+
+# Test internet speed
+speedtest() {
+    curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 -;
+}
+
+# Get info about current ip
+ip() {
+    curl https://ipinfo.io/json; 
 }
 
 # Expand a short url
@@ -92,18 +141,6 @@ weather() {
 # Get random numbers
 random() {
     curl "https://www.random.org/integers/?num=${1:-1}&min=${2:-1}&max=${3:-100}&col=1&base=10&format=plain&rnd=new"
-}
-
-# Git pull in all valid subdirectories 
-pullall() {
-for dir in ./*/
-  do
-    cd ${dir}
-    git status >/dev/null 2>&1
-    # check if exit status of above was 0, indicating we're in a git repo
-    [ $(echo $?) -eq 0 ] && echo "Updating ${dir%*/}..." && git pull
-    cd ..
-  done
 }
 
 # Extract all links from a page

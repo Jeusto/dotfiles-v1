@@ -1,4 +1,7 @@
-"""""" Vim-plug """"""
+"#################
+"###  Plugins  ###
+"#################
+
 call plug#begin()
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' } " File navigation window
 Plug 'ryanoasis/vim-devicons' " File icons for nerd tree
@@ -12,12 +15,17 @@ Plug 'preservim/tagbar' " Display tags/classes etc in a window
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Autocompletion
 call plug#end()
 
-"""""" Keybindings """"""
+"####################
+"###  Keybindings ###
+"####################
+
 map <F7> :NERDTreeToggle<CR>
 map <F8> :TagbarToggle<CR>
 
 
-"""""" User interface options """"""
+"####################
+"###  UI Options  ###
+"####################
 " Always display the status bar.
 set laststatus=2 
 " Always show cursor position.
@@ -40,7 +48,10 @@ set title
 set background=dark 
 
 
-"""""" Search options """"""
+"#######################
+"###  Search options ###
+"#######################
+
 " Enable search highlighting
 set hlsearch 		
 " Ignore case when searching
@@ -51,14 +62,19 @@ set incsearch
 set smartcase		
 
 
-"""""" Performance options """"""
+"#############################
+"###  Performance options  ###
+"#############################
 " Limit the files searched for auto-completes.
 set complete-=i 	
 " Don’t update screen during macro and script execution.
 set lazyredraw 		
 
 
-"""""" Text rendering options """"""
+"################################
+"###  Text rendering options  ###
+"################################
+
 " Always try to show a paragraph’s last line.
 set display+=lastline 	
 " Use an encoding that supports unicode.
@@ -74,8 +90,10 @@ syntax enable
 " Enable line wrapping.
 set wrap 		
 
+"####################################
+"###  Indentation and tabulation  ###
+"####################################
 
-"""""" Indentation and tabulation """"""
 set autoindent
 set smartindent
 set smarttab
