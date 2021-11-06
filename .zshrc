@@ -67,14 +67,14 @@ installtheme() {
 
 # Git pull in all valid subdirectories 
 pullall() {
-for dir in ./*/
-  do
-    cd ${dir}
-    git status >/dev/null 2>&1
-    # check if exit status of above was 0, indicating we're in a git repo
-    [ $(echo $?) -eq 0 ] && echo "Updating ${dir%*/}..." && git pull
-    cd ..
-  done
+  for dir in ./*/
+    do
+      cd ${dir}
+      git status >/dev/null 2>&1
+      # check if exit status of above was 0, indicating we're in a git repo
+      [ $(echo $?) -eq 0 ] && echo "Updating ${dir%*/}..." && git pull
+      cd ..
+    done
 }
 
 # Change directories and view the contents
@@ -167,7 +167,4 @@ speedtest() {
 ###  Other  ###
 ###############
 
-source ~/.powerlevel10k/powerlevel10k.zsh-theme
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
