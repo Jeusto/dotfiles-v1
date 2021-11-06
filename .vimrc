@@ -2,6 +2,8 @@
 "###  Plugins  ###
 "#################
 
+let g:ale_disable_lsp = 0
+
 call plug#begin()
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' } " File navigation window
 Plug 'ryanoasis/vim-devicons' " File icons for nerd tree
@@ -12,7 +14,11 @@ Plug 'tpope/vim-surround' " Easily add/remove brackets/tags etc
 Plug 'tpope/vim-commentary' " Easily comment/uncomment
 Plug 'itchyny/lightline.vim' " Status/tabline
 Plug 'preservim/tagbar' " Display tags/classes etc in a window
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " Autocompletion
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense
+Plug 'dense-analysis/ale' " Linting
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim' " Files search
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' } " Prettier wrapper
 call plug#end()
 
 "####################
@@ -22,10 +28,13 @@ call plug#end()
 map <F7> :NERDTreeToggle<CR>
 map <F8> :TagbarToggle<CR>
 
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 "####################
 "###  UI Options  ###
 "####################
+
 " Always display the status bar.
 set laststatus=2 
 " Always show cursor position.
@@ -47,7 +56,6 @@ set title
 " Use colors that suit a dark background.
 set background=dark 
 
-
 "#######################
 "###  Search options ###
 "#######################
@@ -61,15 +69,14 @@ set incsearch
 " Auto switch search to case-sensitive if search contains an uppercase letter		
 set smartcase		
 
-
 "#############################
 "###  Performance options  ###
 "#############################
+
 " Limit the files searched for auto-completes.
 set complete-=i 	
 " Don’t update screen during macro and script execution.
 set lazyredraw 		
-
 
 "################################
 "###  Text rendering options  ###
@@ -88,7 +95,7 @@ set sidescrolloff=5
 " Enable syntax highlighting.
 syntax enable 		
 " Enable line wrapping.
-set wrap 		
+set wrap 	
 
 "####################################
 "###  Indentation and tabulation  ###
@@ -101,3 +108,103 @@ set expandtab
 set tabstop=8
 set softtabstop=4
 set shiftwidth=4
+
+"###############
+"###  Other  ###
+"###############
+	
+" Cursor types for different modes
+let &t_SI="\eP\e[5 q\e\\"
+let &t_EI="\eP\e[1 q\e\\"
+let &t_SR="\eP\e[3 q\e\\"
+
+" You will have bad experience for diagnostic messages when it's default 4000.
+set updatetime=300
+
+"#############
+"###  Ale  ###
+"#############
+
+let g:ale_set_balloons = 1
+let g:ale_sign_error = '⛔'
+let g:ale_sign_warning = '⚠️'
+let g:ale_set_highlights = 0
+
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
+
+"#############
+"###  Coc  ###
+"#############
+
+" Coc extensions
+let g:coc_preferences_enableFloatHighLight = 0
+let g:coc_config_home = '$HOME/.coc'
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-pairs',
+  \ 'coc-tsserver',
+  \ 'coc-eslint', 
+  \ 'coc-prettier', 
+  \ 'coc-json', 
+  \ 'coc-java',
+  \ 'coc-python',
+  \ 'coc-clangd'
+  \ ]
+  
+" Coc indicators
+let g:coc_user_config = {
+  \ "diagnostic.errorSign": '⛔',
+  \ "diagnostic.warningSign": '⚠️',
+  \ "diagnostic.infoSign": 'ℹ️',
+  \ "diagnostic.hintSign": '💡',
+  \ "diagnostic.signOffset": 100,
+  \ "coc.preferences.enableFloatHighlight": v:false,
+  \ }
+
+" TextEdit might fail if hidden is not set.
+set hidden
+
+" Some servers have issues with backup files, see #649.
+set nobackup
+set nowritebackup
+
+" Give more space for displaying messages?
+set cmdheight=2
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+" Indicators on the same column as line numbers
+set signcolumn=number
+
+" Add `:Format` command to format current buffer.
+command! -nargs=0 Format :call CocAction('format')
+
+" Add `:Fold` command to fold current buffer.
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+
+" Apply AutoFix to problem on the current line.
+map <leader>qf  <Plug>(coc-fix-current)
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -20,6 +20,7 @@ zstyle ':omz:update' mode reminder
 plugins=(git copydir copyfile zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
+export PATH=/home/linuxbrew/.linuxbrew/bin/:$PATH
 
 #################
 ###  Aliases  ###
@@ -51,7 +52,6 @@ alias hs='history | grep'
 
 # Sort by file size
 alias lt='ls --human-readable --size -1 -S --classify'
-
 
 ###################
 ###  Functions  ###
