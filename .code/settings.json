@@ -1,0 +1,231 @@
+{
+  // =========================================================
+  // ~ FONTS
+  // =========================================================
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "'JetBrains Mono'",
+  "editor.fontWeight": "400",
+  "editor.inlayHints.fontFamily": "'JetBrains Mono'",
+  "editor.codeLensFontFamily": "'JetBrains Mono'",
+  "terminal.integrated.fontFamily": "'JetBrains Mono'",
+  "terminal.integrated.fontSize": 14,
+  // =========================================================
+  // ~ THEMING AND STYLE
+  // =========================================================
+  "material-icon-theme.showWelcomeMessage": false,
+  "workbench.preferredDarkColorTheme": "One Dark Pro",
+  "workbench.iconTheme": "material-icon-theme",
+  // =========================================================
+  // ~ CURSOR
+  // =========================================================
+  "editor.multiCursorModifier": "ctrlCmd",
+  "terminal.integrated.cursorStyle": "line",
+  // =========================================================
+  // ~ UI IMPROVEMENTS
+  // =========================================================
+  "editor.minimap.showSlider": "always",
+  "editor.minimap.renderCharacters": false,
+  "window.title": "${activeEditorShort} ${dirty}",
+  "workbench.editor.pinnedTabSizing": "shrink",
+  "workbench.sideBar.location": "right",
+  "zenMode.hideTabs": false,
+  // =========================================================
+  // ~ QUALITY OF LIFE
+  // =========================================================
+  "editor.quickSuggestionsDelay": 0,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.renderWhitespace": "none",
+  "git.enableSmartCommit": true,
+  "git.decorations.enabled": false,
+  "editor.wordWrap": "wordWrapColumn",
+  "workbench.editor.tabCloseButton": "off",
+  "files.defaultLanguage": "markdown",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true,
+    "node_modules": true
+  },
+  // =========================================================
+  // ~ TERMINAL
+  // =========================================================
+  "terminal.external.windowsExec": "C:\\Program Files\\Git\\git-bash.exe",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "Git Bash",
+      "icon": "terminal-bash"
+    },
+    "Git Bash": {
+      "source": "Git Bash",
+      "icon": "terminal-bash"
+    }
+  },
+  // =========================================================
+  // ~ LANGUAGES
+  // =========================================================
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "python.formatting.yapfArgs": [
+    "--style={based_on_style: google, column_limit: 80, indent_width: 2}"
+  ],
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.formatOnPaste": false
+  },
+  "java.project.sourcePaths": [""],
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "json.format.enable": true,
+  "html.format.wrapAttributes": "force-aligned",
+  "html.hover.references": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "files.associations": {
+    "*.pl": "prolog",
+    "*.jsx": "javascriptreact"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[markdown]": {
+    "editor.wordWrap": "off",
+    "editor.quickSuggestions": false
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  // =========================================================
+  // ~ EXTENSIONS
+  // =========================================================
+  "leetcode.hint.commandShortcut": false,
+  "leetcode.hint.configWebviewMarkdown": false,
+  "leetcode.hint.commentDescription": false,
+  "leetcode.defaultLanguage": "c",
+  "leetcode.editor.shortcuts": [],
+  "leetcode.workspaceFolder": "c:\\Users\\arhun\\Documents\\Projets\\leetcode-problems",
+  "liveServer.settings.donotVerifyTags": true,
+  "liveServer.settings.root": "/",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveSassCompile.settings.showOutputWindow": false,
+  "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"],
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "compressed",
+      "extensionName": ".css",
+      "savePath": "~"
+    }
+  ],
+  "debug-leetcode.cppCompiler": "clang",
+  "codesnap.showWindowControls": false,
+  "material-ui-snippets.showNotesOnStartup": false,
+  "thunder-client.codeSnippetLanguage": "js-axios",
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.keymap": "alternate",
+  "gitlens.codeLens.enabled": false,
+  "latex-workshop.view.pdf.viewer": "browser",
+  "vsicons.dontShowNewVersionMessage": true,
+  "numberedBookmarks.saveBookmarksInProject": true,
+  "C_Cpp.updateChannel": "Insiders",
+  "sqltools.useNodeRuntime": true,
+  "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+  "C_Cpp.clang_format_fallbackStyle": "Google",
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html"
+  },
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]"
+  ],
+  "projectManager.git.baseFolders": [
+    "C:\\Users\\arhun\\Documents\\Projets",
+    "C:\\Users\\arhun\\Documents\\L2S4A"
+  ],
+  "code-runner.runInTerminal": true,
+  "code-runner.terminalRoot": "/",
+  "code-runner.clearPreviousOutput": true,
+  "code-runner.executorMap": {
+    "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt -Wall -Wextra && $dir$fileNameWithoutExt"
+  },
+  "react-native-tools.showUserTips": false,
+  "python.formatting.provider": "yapf",
+  "remote.SSH.remotePlatform": {
+    "turing.u-strasbg.fr": "linux"
+  },
+  "C_Cpp_Runner.warnings": ["-Wall", "-Wextra", "-Wpedantic", "-Werror"],
+  "vscode-neovim.neovimExecutablePaths.win32": "C:\\Users\\arhun\\scoop\\apps\\neovim\\current\\bin\\nvim.exe",
+  // =========================================================
+  // ~ OTHER
+  // =========================================================
+  "window.openFilesInNewWindow": "default",
+  "editor.tabSize": 2,
+  "files.eol": "\n",
+  "window.newWindowDimensions": "inherit",
+  "explorer.confirmDragAndDrop": false,
+  "git.confirmSync": false,
+  "diffEditor.renderSideBySide": false,
+  "search.useReplacePreview": false,
+  "debug.inlineValues": true,
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "workbench.editor.untitled.hint": "hidden",
+  "workbench.editor.languageDetection": true,
+  "editor.renderIndentGuides": false,
+  "editor.highlightActiveIndentGuide": false,
+  "diffEditor.wordWrap": "off",
+  "problems.showCurrentInStatus": true,
+  "editor.inlineSuggest.enabled": true,
+  "security.workspace.trust.banner": "never",
+  "search.searchEditor.doubleClickBehaviour": "selectWord",
+  "editor.suggest.showStatusBar": true,
+  "window.restoreWindows": "preserve",
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+  "settingsSync.ignoredSettings": ["-window.zoomLevel"],
+  "editor.autoClosingBrackets": "always",
+  "editor.autoClosingQuotes": "always",
+  "security.workspace.trust.untrustedFiles": "open",
+  "workbench.editor.tabSizing": "shrink",
+  "svgviewer.showzoominout": true,
+  "editor.suggestSelection": "first",
+  "projectManager.git.maxDepthRecursion": 1,
+  "debug.onTaskErrors": "debugAnyway",
+  "conf.resource.insertEmptyLastLine": {},
+  "conf.view.showOnWindowOpen": "debug",
+  "editor.formatOnType": true,
+  "editor.accessibilitySupport": "off",
+  "terminal.integrated.lineHeight": 1.2,
+  "editor.bracketPairColorization.enabled": true,
+  "update.mode": "none",
+  "git.confirmEmptyCommits": false,
+  "settingsSync.keybindingsPerPlatform": false,
+  "editor.scrollbar.horizontalScrollbarSize": 14,
+  "editor.minimap.enabled": false,
+  "sync.gist": "4929642ba4465b90a9b697213c676396",
+  "editor.suggest.preview": true,
+  "editor.guides.bracketPairs": true,
+  "tabnine.experimentalAutoImports": true,
+  "warmUp.changeCount": "60",
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "workbench.colorTheme": "One Dark Pro"
+}
