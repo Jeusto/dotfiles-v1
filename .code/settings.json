@@ -15,6 +15,7 @@
   "material-icon-theme.showWelcomeMessage": false,
   "workbench.preferredDarkColorTheme": "One Dark Pro",
   "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "One Dark Pro",
   // =========================================================
   // ~ CURSOR
   // =========================================================
@@ -63,6 +64,7 @@
       "icon": "terminal-bash"
     }
   },
+  "terminal.integrated.defaultProfile.linux": "bash",
   // =========================================================
   // ~ LANGUAGES
   // =========================================================
@@ -226,6 +228,5 @@
   "warmUp.changeCount": "60",
   "[cpp]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
-  },
-  "workbench.colorTheme": "One Dark Pro"
+  }
 }

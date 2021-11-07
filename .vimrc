@@ -18,7 +18,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense
 Plug 'dense-analysis/ale' " Linting
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim' " Files search
+Plug 'SirVer/ultisnips' " Snipppets engine
+Plug 'honza/vim-snippets' " Snippets
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' } " Prettier wrapper
+
 call plug#end()
 
 "####################
@@ -28,8 +31,16 @@ call plug#end()
 map <F7> :NERDTreeToggle<CR>
 map <F8> :TagbarToggle<CR>
 
+let g:UltiSnipsExpandTrigger = "<F5>" 
+
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <Enter> pumvisible() ? "\<C-y>" : "\<Enter>"
+
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 
 "####################
 "###  UI Options  ###
@@ -106,8 +117,8 @@ set smartindent
 set smarttab
 set expandtab 
 set tabstop=8
-set softtabstop=4
-set shiftwidth=4
+set softtabstop=2
+set shiftwidth=2
 
 "###############
 "###  Other  ###
@@ -195,16 +206,3 @@ xmap <leader>f  <Plug>(coc-format-selected)
 
 " Apply AutoFix to problem on the current line.
 map <leader>qf  <Plug>(coc-fix-current)
-
-
-
-
-
-
-
-
-
-
-
-
-
