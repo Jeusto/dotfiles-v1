@@ -4,7 +4,7 @@
   // =========================================================
   "editor.fontLigatures": true,
   "editor.fontFamily": "'JetBrains Mono'",
-  "editor.fontWeight": "400",
+  "editor.fontWeight": "500",
   "editor.inlayHints.fontFamily": "'JetBrains Mono'",
   "editor.codeLensFontFamily": "'JetBrains Mono'",
   "terminal.integrated.fontFamily": "'JetBrains Mono'",
@@ -215,7 +215,6 @@
   "editor.formatOnType": true,
   "editor.accessibilitySupport": "off",
   "terminal.integrated.lineHeight": 1.2,
-  "editor.bracketPairColorization.enabled": true,
   "update.mode": "none",
   "git.confirmEmptyCommits": false,
   "settingsSync.keybindingsPerPlatform": false,
@@ -224,6 +223,7 @@
   "sync.gist": "4929642ba4465b90a9b697213c676396",
   "editor.suggest.preview": true,
   "editor.guides.bracketPairs": true,
+  "editor.bracketPairColorization.enabled": true,
   "tabnine.experimentalAutoImports": true,
   "warmUp.changeCount": "60",
   "[cpp]": {
