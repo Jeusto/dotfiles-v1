@@ -7,7 +7,7 @@
   "editor.fontWeight": "500",
   "editor.inlayHints.fontFamily": "'JetBrains Mono'",
   "editor.codeLensFontFamily": "'JetBrains Mono'",
-  "terminal.integrated.fontFamily": "'JetBrains Mono'",
+  "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font'",
   "terminal.integrated.fontSize": 14,
   // =========================================================
   // ~ THEMING AND STYLE
@@ -30,6 +30,7 @@
   "workbench.editor.pinnedTabSizing": "shrink",
   "workbench.sideBar.location": "right",
   "zenMode.hideTabs": false,
+  "editor.rulers": [80],
   // =========================================================
   // ~ QUALITY OF LIFE
   // =========================================================
@@ -64,7 +65,7 @@
       "icon": "terminal-bash"
     }
   },
-  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.defaultProfile.linux": "zsh",
   // =========================================================
   // ~ LANGUAGES
   // =========================================================
@@ -156,8 +157,8 @@
     "[x]"
   ],
   "projectManager.git.baseFolders": [
-    "C:\\Users\\arhun\\Documents\\Projets",
-    "C:\\Users\\arhun\\Documents\\L2S4A"
+    "~/Universite",
+    "~/Perso"
   ],
   "code-runner.runInTerminal": true,
   "code-runner.terminalRoot": "/",
@@ -219,7 +220,6 @@
   "git.confirmEmptyCommits": false,
   "settingsSync.keybindingsPerPlatform": false,
   "editor.scrollbar.horizontalScrollbarSize": 14,
-  "editor.minimap.enabled": false,
   "sync.gist": "4929642ba4465b90a9b697213c676396",
   "editor.suggest.preview": true,
   "editor.guides.bracketPairs": true,
@@ -228,5 +228,14 @@
   "warmUp.changeCount": "60",
   "[cpp]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
-  }
+  },
+  "debug.toolBarLocation": "docked",
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": false
+  },
+  "breadcrumbs.enabled": false,
+  "code-runner.ignoreSelection": true
 }
