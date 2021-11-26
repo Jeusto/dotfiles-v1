@@ -17,7 +17,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 zstyle ':omz:update' mode reminder  
 
 # Plugins
-plugins=(git copydir copyfile zsh-syntax-highlighting)
+plugins=(git copydir copyfile zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 export PATH=/home/linuxbrew/.linuxbrew/bin/:$PATH
