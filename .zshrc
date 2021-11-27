@@ -6,6 +6,7 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+ZLE_RPROMPT_INDENT=0
 
 # Path to oh-my-zsh installation
 export ZSH="/home/asaday/.oh-my-zsh"
@@ -17,7 +18,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 zstyle ':omz:update' mode reminder  
 
 # Plugins
-plugins=(git copydir copyfile zsh-syntax-highlighting)
+plugins=(git copydir copyfile zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 export PATH=/home/linuxbrew/.linuxbrew/bin/:$PATH
