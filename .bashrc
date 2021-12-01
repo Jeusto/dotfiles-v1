@@ -105,6 +105,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+PS1="\e[0;34m[\W] ➤ \e[0m"
+
 #################
 ###  Aliases  ###
 #################
@@ -141,7 +143,9 @@ alias lt='ls --human-readable --size -1 -S --classify'
 ###################
 
 # Make a folder and go into it
-mkcd() { mkdir -p $1; cd $1 }
+mkcd() { 
+  mkdir -p $1; cd $1 
+}
 
 # Install a theme
 installtheme() {
@@ -246,6 +250,3 @@ speedtest() {
   curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 -
 }
 
-###############
-###  Other  ###
-###############
