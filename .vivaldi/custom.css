@@ -1,0 +1,16 @@
+.theme-dark .favicon:not(.svg) {
+  filter: none !important;
+}
+.tab-position .tab .favicon { 
+  background-color: transparent !important; 
+}
+
+
+.sync-and-trash-container {
+  display: none;
+}
+
+
+button.vivaldi {
+  display: none;
+}
