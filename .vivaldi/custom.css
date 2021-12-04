@@ -1,16 +1,31 @@
 .theme-dark .favicon:not(.svg) {
-  filter: none !important;
+    filter: none !important;
 }
 .tab-position .tab .favicon { 
-  background-color: transparent !important; 
+    background-color: transparent !important; 
 }
 
 
 .sync-and-trash-container {
-  visibility: hidden;
+    visibility: hidden;
 }
 
+.win.normal #tabs-tabbar-container.top, .linux.normal #tabs-tabbar-container.top {
+    padding-top: 0px;
+}
 
 button.vivaldi {
- visibility: hidden;
+    padding: 0;
+    height: 30px;
 }
+
+/*
+button.vivaldi {
+    visibility: hidden;
+}
+
+.linux #tabs-container:not(.none).top {
+    padding-left: 30px;
+}
+*/
+
