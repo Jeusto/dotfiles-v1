@@ -7,10 +7,10 @@
 
 
 .sync-and-trash-container {
-  display: none;
+  visibility: hidden;
 }
 
 
 button.vivaldi {
-  display: none;
+ visibility: hidden;
 }
