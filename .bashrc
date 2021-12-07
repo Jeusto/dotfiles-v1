@@ -206,7 +206,7 @@ speedtest() {
 }
 
 # Get info about current ip
-ip() {
+ipinfo() {
     curl https://ipinfo.io/json; 
 }
 
