@@ -18,7 +18,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 zstyle ':omz:update' mode reminder  
 
 # Plugins
-plugins=(git copydir copyfile zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 export PATH=/home/linuxbrew/.linuxbrew/bin/:$PATH
@@ -31,9 +31,6 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-
-# Other
-alias t="cd ~/Téléchargements/"
 alias g="git"
 
 # Enable aliases to be sudo’ed
@@ -51,31 +48,23 @@ alias vg='valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -
 # Search through command history
 alias hs='history | grep'
 
-# Sort by file size
+# Show files sorted by size
 alias lt='ls --human-readable --size -1 -S --classify'
+
 
 ###################
 ###  Functions  ###
 ###################
 
-# Make a folder and go into it
-mkcd() { mkdir -p $1; cd $1 }
-
-# Install a theme
-installtheme() {
-  bash -c  "$(wget -qO- https://git.io/vQgMr)"
+# Copy current directory into clipboard
+copydir() {
+  DIR=$(pwd)
+  echo "Copied current directory into clipboard: $DIR"; pwd | xclip -selection clipboard 
 }
 
-# Git pull in all valid subdirectories 
-pullall() {
-  for dir in ./*/
-    do
-      cd ${dir}
-      git status >/dev/null 2>&1
-      # check if exit status of above was 0, indicating we're in a git repo
-      [ $(echo $?) -eq 0 ] && echo "Updating ${dir%*/}..." && git pull
-      cd ..
-    done
+# Copy file content into clipboard
+copyfile() {
+  echo "Copied file content into clipboard: $1"; cat $1 | xclip -selection clipboard 
 }
 
 # Change directories and view the contents
@@ -90,17 +79,13 @@ cl() {
         ls -F --color=auto
 }
 
-# Count number of files in directory
-numfiles() { 
-    N="$(ls $1 | wc -l)"; 
-    echo "$N files in $1";
-}
-
-# Upload and share text or code file
+# Upload and share formatted code file
 sharecode() {
     file="$1"
     (cat "$1" | curl -F 'f:1=<-' ix.io) | sed "s/$/\/${file##*.}/" | xclip -selection clipboard;
 }
+
+# Upload and share text file
 sharetxt() {
     (cat "$1" | curl -F 'f:1=<-' ix.io) | xclip -selection clipboard;
 }
@@ -114,15 +99,16 @@ transfer() {
 ###  Curl commands  ###
 #######################
 
+# Cheat.sh
+ch() {
+    curl cht.sh/$1
+}
+
 # Test internet speed
 speedtest() {
     curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 -;
 }
 
-# Get info about current ip
-ipinfo() {
-    curl https://ipinfo.io/json; 
-}
 
 # Expand a short url
 expand() {
@@ -157,11 +143,6 @@ news() {
     query="${query}+$ARG"
   done
   curl getnews.tech/${query}
-}
-
-# Speed test
-speedtest() {
-  curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 -
 }
 
 ###############

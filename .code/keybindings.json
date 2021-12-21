@@ -15,12 +15,12 @@
     "when": "terminalFocus && terminalIsOpen"
   },
   {
-    "key": "ctrl+n",
+    "key": "ctrl+shift+t",
     "command": "workbench.action.terminal.new",
     "when": "terminalFocus && terminalIsOpen"
   },
   {
-    "key": "ctrl+w",
+    "key": "ctrl+shift+w",
     "command": "workbench.action.terminal.kill",
     "when": "terminalFocus && terminalIsOpen"
   },
@@ -35,7 +35,7 @@
     "when": "terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
   },
   {
-    "key": "ctrl+\\",
+    "key": "ctrl+shift+\\",
     "command": "workbench.action.terminal.split",
     "when": "terminalFocus && terminalProcessSupported"
   },
@@ -552,5 +552,10 @@
     "key": "up",
     "command": "-selectPrevSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+shift+c",
+    "command": "-workbench.action.terminal.openNativeConsole",
+    "when": "!terminalFocus"
   }
 ]
